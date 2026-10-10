@@ -22,14 +22,27 @@ h1, h2, h3, h5 {color: #272727;
                 font-family:verdana, sans-serif;
                 font-weight: 600;}
 
- h1 {
-      font-size: 3.2rem;        /* larger, like "Antoine Choley" */
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      margin-bottom: 0.25rem;}
 
 .border {
       border-bottom: solid white;
       padding-bottom: 1.2rem;
       margin-bottom: 1.2rem;}
 
+ tbody tr:hover td, tr:hover td {background-color: #e7ecdd; }
+
+  table {
+      width: 100%;
+      border-collapse: collapse;      /* removes double borders */
+      margin: 10px 0 40px;
+      background-color: #f7f6f4;      /* very soft off-white card */
+      font-size: 14px;
+      border: 1px solid #d6d3cf; }
+
+
+ table {
+      width: 100%;
+      border-collapse: collapse;      /* removes double borders */
+      margin: 10px 0 40px;
+      background-color: #f7f6f4;      /* very soft off-white card */
+      font-size: 14px;
+      border: 1px solid #d6d3cf; }
