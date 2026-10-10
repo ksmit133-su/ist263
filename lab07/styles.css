@@ -1,7 +1,8 @@
 body {
     background-color: #e3e4e6;
     color:#000000;
-    font-family:Tahoma, sans-serif;}
+    font-family:"lato," arial, sans-serif;
+    font-size: 14px;}
 
 nav {background-color: #dde6d5;
     padding: 10px;
@@ -13,4 +14,4 @@ nav a:hover {colo: #c9d9b8}
 a {color: #2f6b3a;}
 h1, h2, h3, h5 {color: #555555;
                 font-family:Tahoma, sans-serif;}
-                
+
