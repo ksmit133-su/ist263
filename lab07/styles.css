@@ -22,15 +22,14 @@ h1, h2, h3, h5 {color: #272727;
                 font-family:verdana, sans-serif;
                 font-weight: 600;}
 
+ h1 {
+      font-size: 3.2rem;        /* larger, like "Antoine Choley" */
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.25rem;}
+
 .border {
       border-bottom: solid white;
       padding-bottom: 1.2rem;
       margin-bottom: 1.2rem;}
 
- .hero-image img {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 4px;
