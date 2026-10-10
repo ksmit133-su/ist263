@@ -47,3 +47,12 @@ h1, h2, h3, h5 {color: #272727;
       text-transform: uppercase;
       font-size: 13px;
       border-color: #b2c09c;}
+
+
+ caption {
+      caption-side: top;
+      text-align: left;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #272727;
+      padding: 0 0 12px;}
