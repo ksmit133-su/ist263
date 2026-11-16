@@ -404,6 +404,150 @@ footer {
 @media (max-width: 700px) {
     .journal-spread { flex-direction: column; }
     .left-page { border-right: none; border-bottom: 1px dashed #ccc5b9; }
+}
 
 
+/* Underlines the active page link in the top navbar */
+.active-link {
+    border-bottom: 2px solid #181818;
+    padding-bottom: 3px;
+    color: #181818;
+    font-weight: bold;
+}
+
+/* 2-Column Flexbox Container */
+.about-wrapper {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+    position: relative;
+}
+
+/* Left Column (Photo + Mini Shelf) */
+.about-left {
+    flex: 1;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.about-hanging-plant {
+    position: absolute;
+    left: -75px;
+    top: -110px;
+    width: 110px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* Double-Line Editorial Frame around your Portrait */
+.photo-frame {
+    background-color: #ffffff;
+    border: 1.5px solid #181818;
+    padding: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    margin-bottom: 45px;
+}
+
+.photo-frame img {
+    width: 240px;
+    height: 310px;
+    object-fit: cover;
+    display: block;
+    border: 1px solid #dddddd;
+}
+
+/* Mini Decorative Shelf under the Photo */
+.mini-shelf-scene {
+    width: 100%;
+}
+
+.mini-shelf-items {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 14px;
+    padding-bottom: 1px;
+}
+
+.mini-decor {
+    width: 65px;
+    height: auto;
+}
+
+.mini-decor-small {
+    width: 35px;
+    height: auto;
+}
+
+/* Right Column (Bio Text) */
+.about-right {
+    flex: 1.4;
+    text-align: left;
+    padding-top: 10px;
+}
+
+.about-right h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 36px;
+    margin-bottom: 24px;
+    color: #181818;
+}
+
+/* Handwritten / Casual Editorial Body Copy */
+.about-right p {
+    font-family: 'Bradley Hand', 'Segoe Print', 'Comic Sans MS', cursive;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #2b2b2b;
+    margin-bottom: 18px;
+}
+
+.underline-accent {
+    border-bottom: 1.5px solid #181818;
+    padding-bottom: 1px;
+}
+
+/* Contact & Social Links */
+.contact-links {
+    margin-top: 30px;
+    padding-top: 15px;
+}
+
+.links-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.social-link {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    font-weight: bold;
+    color: #181818;
+    text-decoration: none;
+    border-bottom: 1.5px solid #181818;
+    padding-bottom: 2px;
+}
+
+.social-link:hover {
+    background-color: #181818;
+    color: #ffffff;
+}
+
+/* Responsive: Stacks photo on top of text on smaller screens */
+@media (max-width: 768px) {
+    .about-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-hanging-plant {
+        display: none;
+    }
 }
