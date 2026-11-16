@@ -8,7 +8,7 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     background-color: #ffffff;
-    color: #000000;
+    color: #111111;
     background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
     background-size: 24px 24px;
     min-height: 100vh;
@@ -26,8 +26,16 @@ body {
     font-weight: bold;
 }
 .navbar a {
-    color: var(--ink);
+    color: #111111;
     text-decoration: none;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.navbar span {
+    margin: 0 6px;
 }
 
 .music-btn {
