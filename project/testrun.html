@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kay Smith / Architecture Journals</title>
+    
+    <style>
+        /* 1. Global Reset & Subtle Dot Grid */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #fcfcfa;
+    color: #181818;
+    background-image: radial-gradient(#dcdad3 1.2px, transparent 1.2px);
+    background-size: 26px 26px;
+    min-height: 100vh;
+}
+
+/* 2. Minimal Top Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 48px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #555555;
+}
+
+.navbar a {
+    color: #555555;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #000000;
+}
+
+/* 3. Header Typography */
+.wrapper {
+    max-width: 960px;
+    margin: 10px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.main-header h1 {
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+    color: #181818;
+}
+
+.main-header .subtitle {
+    font-size: 13px;
+    color: #777777;
+    letter-spacing: 0.5px;
+    margin-bottom: 50px;
+}
+
+/* 4. Shelf Scene Layout */
+.room-canvas {
+    position: relative;
+    max-width: 780px;
+    margin: 0 auto 45px auto;
+    padding-left: 55px;
+}
+
+.hanging-plant-svg {
+    position: absolute;
+    left: -15px;
+    top: -115px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.shelf-container {
+    position: relative;
+    margin-bottom: 85px;
+}
+
+.shelf-items {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 12px;
+    padding: 0 25px;
+}
+
+.black-shelf {
+    width: 100%;
+    height: 10px;
+    background-color: #181818;
+    border-radius: 1px;
+}
+
+.shelf-brackets {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 70px;
+}
+
+.bracket {
+    width: 12px;
+    height: 18px;
+    background-color: #181818;
+    border-radius: 0 0 6px 6px;
+}
+
+/* 5. Desk Calendar & Props */
+.desk-calendar {
+    width: 90px;
+    height: 75px;
+    border: 1.5px solid #181818;
+    background: #ffffff;
+    padding: 6px;
+    margin-right: 12px;
+    position: relative;
+}
+
+.cal-rings {
+    display: flex;
+    justify-content: space-around;
+    margin-top: -11px;
+    margin-bottom: 4px;
+}
+
+.cal-rings span {
+    width: 5px;
+    height: 8px;
+    border: 1.5px solid #181818;
+    border-radius: 3px;
+    background: #ffffff;
+}
+
+.cal-month {
+    font-size: 8px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 3px;
+    margin-bottom: 4px;
+}
+
+.cal-grid {
+    height: 38px;
+    background-image: radial-gradient(#999 1px, transparent 1px);
+    background-size: 10px 9px;
+}
+
+.cat-svg {
+    margin-bottom: -35px; /* Lets cat tail hang below shelf line */
+    margin-left: -10px;
+}
+
+.trailing-pot-svg {
+    margin-bottom: -30px; /* Lets vine trail below bottom shelf */
+}
+
+/* Pen Cup & Stacked Flat Books */
+.desk-stack-group {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    margin-right: 15px;
+}
+
+.pen-cup {
+    width: 24px;
+    height: 36px;
+    background-color: #eae8e3;
+    position: relative;
+}
+
+.pen {
+    position: absolute;
+    width: 2px;
+    height: 22px;
+    background-color: #181818;
+    top: -18px;
+}
+.p1 { left: 6px; transform: rotate(-12deg); }
+.p2 { left: 11px; height: 26px; top: -22px; }
+.p3 { left: 16px; transform: rotate(14deg); }
+
+.flat-books {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.flat-book {
+    width: 68px;
+    height: 8px;
+    border: 1.5px solid #181818;
+}
+.fb-dark { background-color: #181818; }
+.fb-light { background-color: #ffffff; }
+
+/* 6. Illustrated Notebook Spines */
+.book-spine {
+    width: 56px;
+    border: 1.5px solid #181818;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    transition: transform 0.2s ease;
+    overflow: hidden;
+}
+
+.book-spine:hover {
+    transform: translateY(-10px);
+}
+
+.year-label {
+    font-size: 11px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+/* Spine 1: 2022 (Black with white curve & star) */
+.spine-2022 {
+    height: 165px;
+    background-color: #181818;
+    color: #ffffff;
+}
+.star-mark { font-size: 14px; }
+.wave-cutout {
+    width: 45px;
+    height: 65px;
+    background-color: #ffffff;
+    border-radius: 50% 0 0 0;
+    align-self: flex-end;
+    margin-bottom: -14px;
+}
+
+/* Spine 2: 2023 (White with striped band & circle) */
+.spine-2023 {
+    height: 152px;
+    background-color: #ffffff;
+}
+.stripe-band {
+    width: 100%;
+    height: 24px;
+    border-top: 1.5px solid #181818;
+    border-bottom: 1.5px solid #181818;
+    background: repeating-linear-gradient(90deg, #181818, #181818 1.5px, #ffffff 1.5px, #ffffff 6px);
+}
+.solid-circle {
+    width: 22px;
+    height: 22px;
+    background-color: #181818;
+    border-radius: 50%;
+    margin-bottom: 8px;
+}
+
+/* Spine 3: 2024 (Tall white with 3 half-moons) */
+.spine-2024 {
+    height: 175px;
+    background-color: #ffffff;
+}
+.half-moons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+.half-moons span {
+    width: 14px;
+    height: 24px;
+    background-color: #181818;
+    border-radius: 0 24px 24px 0;
+}
+
+/* Spine 4: 2025 (White with vertical lines & diamond) */
+.spine-2025 {
+    height: 165px;
+    background-color: #ffffff;
+}
+.vertical-lines {
+    width: 100%;
+    height: 36px;
+    border-bottom: 1.5px solid #181818;
+    background: repeating-linear-gradient(90deg, #181818, #181818 1px, #ffffff 1px, #ffffff 7px);
+    margin-top: -14px;
+}
+.diamond-shape {
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid #181818;
+    transform: rotate(45deg);
+    margin-bottom: 12px;
+}
+
+/* Spine 5: 2026 (Shorter diagonal stripes) */
+.spine-2026 {
+    height: 138px;
+    background-color: #ffffff;
+}
+.diagonal-band {
+    width: 100%;
+    height: 38px;
+    border-bottom: 1.5px solid #181818;
+    background: repeating-linear-gradient(-45deg, #181818, #181818 1.5px, #ffffff 1.5px, #ffffff 7px);
+    margin-top: -14px;
+}
+.small-diamond {
+    width: 12px;
+    height: 12px;
+    background-color: #181818;
+    transform: rotate(45deg);
+    margin-bottom: 6px;
+}
+
+/* Spine 6: OTHER (Solid black with vertical text & target ring) */
+.spine-other {
+    height: 172px;
+    background-color: #181818;
+    color: #ffffff;
+    justify-content: space-around;
+}
+.vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    letter-spacing: 2px;
+}
+.target-ring {
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.target-ring span {
+    width: 6px;
+    height: 6px;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+
+/* 7. Bottom Year Filter Tags (Matching Reference Image) */
+.year-tags-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.year-tag-btn {
+    background-color: #ffffff;
+    border: 1px solid #888888;
+    padding: 7px 14px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 11px;
+    color: #181818;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.year-tag-btn:hover {
+    background-color: #181818;
+    color: #ffffff;
+    border-color: #181818;
+}
+
+/* 8. About & Footer */
+.about-section {
+    max-width: 620px;
+    margin: 40px auto 30px auto;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #444444;
+}
+
+.about-section h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #181818;
+}
+
+footer {
+    margin: 40px 0;
+    font-size: 12px;
+    color: #888888;
+}
+
+/* 9. Popup Modal (Lab 12 Hide/Show) */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 15, 15, 0.85);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+#book2022, #book2023, #book2024, #book2025, #book2026, #bookother, #page2022-2 {
+    display: none;
+}
+
+.open-journal {
+    background-color: #f7f5f0;
+    color: #181818;
+    width: 90%;
+    max-width: 820px;
+    margin: 80px auto;
+    border-radius: 8px;
+    padding: 30px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: -32px;
+    right: 0;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.journal-spread {
+    display: flex;
+    gap: 24px;
+    min-height: 340px;
+}
+
+.page {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left-page {
+    text-align: left;
+    border-right: 1px dashed #cccccc;
+}
+
+.page-tag {
+    font-size: 11px;
+    color: #777777;
+    margin-bottom: 10px;
+}
+
+.left-page h2 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.left-page p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #333333;
+}
+
+.right-page img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border: 1px solid #dddddd;
+    margin-bottom: 8px;
+}
+
+.caption {
+    font-size: 11px;
+    color: #666666;
+    text-align: center;
+}
+
+.flip-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e0ded8;
+}
+
+.flip-controls button {
+    background-color: #181818;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    cursor: pointer;
+}
+    </style>
+    <script>
+        /* Hides the popup and all 6 notebooks (Lab 12 style) */
+        function NotebooksOff() {
+            document.getElementById('notebook-modal').style.display = 'none';
+            document.getElementById('book2022').style.display = 'none';
+            document.getElementById('book2023').style.display = 'none';
+            document.getElementById('book2024').style.display = 'none';
+            document.getElementById('book2025').style.display = 'none';
+            document.getElementById('book2026').style.display = 'none';
+            document.getElementById('bookother').style.display = 'none';
+        }
+
+        function Book2022On() {
+            document.getElementById('notebook-modal').style.display = 'block';
+            document.getElementById('book2022').style.display = 'block';
+        }
+
+        function Book2023On() {
+            document.getElementById('notebook-modal').style.display = 'block';
+            document.getElementById('book2023').style.display = 'block';
+        }
+
+        function Book2024On() {
+            document.getElementById('notebook-modal').style.display = 'block';
+            document.getElementById('book2024').style.display = 'block';
+        }
+
+        function Book2025On() {
+            document.getElementById('notebook-modal').style.display = 'block';
+            document.getElementById('book2025').style.display = 'block';
+        }
+
+        function Book2026On() {
+            document.getElementById('notebook-modal').style.display = 'block';
+            document.getElementById('book2026').style.display = 'block';
+        }
+
+        function BookOtherOn() {
+            document.getElementById('notebook-modal').style.display = 'block';
+            document.getElementById('bookother').style.display = 'block';
+        }
+
+        /* Page flip inside 2022 notebook */
+        function Show2022Page1() {
+            document.getElementById('page2022-1').style.display = 'flex';
+            document.getElementById('page2022-2').style.display = 'none';
+        }
+
+        function Show2022Page2() {
+            document.getElementById('page2022-1').style.display = 'none';
+            document.getElementById('page2022-2').style.display = 'flex';
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Minimal Editorial Header -->
+    <header class="navbar">
+        <div class="nav-left">KAY / ARCH</div>
+        <div class="nav-right">
+            <a href="#shelves">JOURNALS</a> &nbsp;/&nbsp; <a href="#about">ABOUT</a>
+        </div>
+    </header>
+
+    <main class="wrapper" id="shelves">
+        
+        <!-- Title Section -->
+        <header class="main-header">
+            <h1>My Architecture Journals</h1>
+            <p class="subtitle">Five years. A new journal. Every year.</p>
+        </header>
+
+        <!-- Illustrated Bookshelf Scene -->
+        <div class="room-canvas">
+
+            <!-- Left Hanging Plant (Clean SVG Vector) -->
+            <svg class="hanging-plant-svg" width="130" height="440" viewBox="0 0 130 440">
+                <!-- Ceiling string & ring -->
+                <line x1="65" y1="0" x2="65" y2="95" stroke="#444" stroke-width="1.2"/>
+                <circle cx="65" cy="98" r="4" fill="none" stroke="#444" stroke-width="1.2"/>
+                <!-- Hanger wires -->
+                <line x1="65" y1="102" x2="38" y2="155" stroke="#444" stroke-width="1.2"/>
+                <line x1="65" y1="102" x2="92" y2="155" stroke="#444" stroke-width="1.2"/>
+                <!-- White Pot -->
+                <path d="M35 155 L95 155 L86 198 C85 203 45 203 44 198 Z" fill="#eae8e3"/>
+                <!-- Top Bushy Leaves -->
+                <ellipse cx="45" cy="148" rx="14" ry="8" transform="rotate(-25 45 148)" fill="#4d8c4a"/>
+                <ellipse cx="65" cy="142" rx="15" ry="9" fill="#3a7238"/>
+                <ellipse cx="85" cy="148" rx="14" ry="8" transform="rotate(25 85 148)" fill="#589b54"/>
+                <ellipse cx="32" cy="162" rx="13" ry="7" transform="rotate(-40 32 162)" fill="#3a7238"/>
+                <ellipse cx="98" cy="162" rx="13" ry="7" transform="rotate(40 98 162)" fill="#4d8c4a"/>
+                <!-- Trailing Vines -->
+                <path d="M45 195 Q30 280 48 390" fill="none" stroke="#4d8c4a" stroke-width="1.5"/>
+                <path d="M65 198 Q78 290 60 420" fill="none" stroke="#3a7238" stroke-width="1.5"/>
+                <path d="M85 195 Q102 260 88 350" fill="none" stroke="#589b54" stroke-width="1.5"/>
+                <!-- Vine Leaves -->
+                <ellipse cx="36" cy="225" rx="9" ry="5" transform="rotate(-30 36 225)" fill="#589b54"/>
+                <ellipse cx="46" cy="255" rx="9" ry="5" transform="rotate(25 46 255)" fill="#3a7238"/>
+                <ellipse cx="35" cy="290" rx="9" ry="5" transform="rotate(-25 35 290)" fill="#4d8c4a"/>
+                <ellipse cx="47" cy="330" rx="9" ry="5" transform="rotate(20 47 330)" fill="#589b54"/>
+                <ellipse cx="44" cy="375" rx="8" ry="5" transform="rotate(-20 44 375)" fill="#3a7238"/>
+                <ellipse cx="72" cy="235" rx="9" ry="5" transform="rotate(30 72 235)" fill="#3a7238"/>
+                <ellipse cx="64" cy="275" rx="9" ry="5" transform="rotate(-25 64 275)" fill="#589b54"/>
+                <ellipse cx="73" cy="315" rx="9" ry="5" transform="rotate(25 73 315)" fill="#4d8c4a"/>
+                <ellipse cx="62" cy="360" rx="9" ry="5" transform="rotate(-30 62 360)" fill="#3a7238"/>
+                <ellipse cx="63" cy="405" rx="8" ry="5" transform="rotate(20 63 405)" fill="#589b54"/>
+                <ellipse cx="94" cy="220" rx="9" ry="5" transform="rotate(35 94 220)" fill="#4d8c4a"/>
+                <ellipse cx="86" cy="265" rx="9" ry="5" transform="rotate(-25 86 265)" fill="#3a7238"/>
+                <ellipse cx="95" cy="310" rx="9" ry="5" transform="rotate(25 95 310)" fill="#589b54"/>
+            </svg>
+
+            <!-- ================= TOP SHELF ================= -->
+            <div class="shelf-container">
+                <div class="shelf-items">
+
+                    <!-- Mini Desk Calendar (Like Reference) -->
+                    <div class="desk-calendar">
+                        <div class="cal-rings"><span></span><span></span><span></span><span></span><span></span></div>
+                        <div class="cal-month">STUDIO</div>
+                        <div class="cal-grid"></div>
+                    </div>
+
+                    <!-- 1. 2022 Notebook (Black with White Wave & Star) -->
+                    <div class="book-spine spine-2022" onclick="NotebooksOff(); Book2022On();">
+                        <span class="star-mark">✦</span>
+                        <span class="year-label">2022</span>
+                        <div class="wave-cutout"></div>
+                    </div>
+
+                    <!-- 2. 2023 Notebook (Striped Top & Black Circle) -->
+                    <div class="book-spine spine-2023" onclick="NotebooksOff(); Book2023On();">
+                        <div class="stripe-band"></div>
+                        <span class="year-label">2023</span>
+                        <div class="solid-circle"></div>
+                    </div>
+
+                    <!-- 3. 2024 Notebook (White with 3 Half-Moons) -->
+                    <div class="book-spine spine-2024" onclick="NotebooksOff(); Book2024On();">
+                        <span class="year-label">2024</span>
+                        <div class="half-moons">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+
+                    <!-- Potted Plant SVG -->
+                    <svg class="prop-svg" width="95" height="125" viewBox="0 0 95 125">
+                        <path d="M48 85 Q30 55 20 35" fill="none" stroke="#3a7238" stroke-width="1.8"/>
+                        <path d="M48 85 Q48 45 55 20" fill="none" stroke="#3a7238" stroke-width="1.8"/>
+                        <path d="M48 85 Q68 55 78 40" fill="none" stroke="#3a7238" stroke-width="1.8"/>
+                        <ellipse cx="20" cy="35" rx="14" ry="9" transform="rotate(-35 20 35)" fill="#4d8c4a"/>
+                        <ellipse cx="55" cy="20" rx="15" ry="10" transform="rotate(15 55 20)" fill="#3a7238"/>
+                        <ellipse cx="78" cy="40" rx="14" ry="9" transform="rotate(35 78 40)" fill="#589b54"/>
+                        <ellipse cx="32" cy="58" rx="12" ry="8" transform="rotate(-50 32 58)" fill="#589b54"/>
+                        <ellipse cx="66" cy="62" rx="12" ry="8" transform="rotate(45 66 62)" fill="#4d8c4a"/>
+                        <path d="M26 82 L69 82 L63 125 L32 125 Z" fill="#eae8e3"/>
+                    </svg>
+
+                    <!-- Sleeping Ginger Cat SVG (With Dangling Tail & Zzz) -->
+                    <svg class="cat-svg" width="150" height="95" viewBox="0 0 150 95">
+                        <!-- Dangling Tail over shelf edge -->
+                        <path d="M22 48 Q6 48 6 88" fill="none" stroke="#c88154" stroke-width="9" stroke-linecap="round"/>
+                        <!-- Cat Body -->
+                        <path d="M20 52 C20 24, 95 24, 105 52 Z" fill="#d99164"/>
+                        <!-- Stripes -->
+                        <path d="M48 31 Q52 40 48 46" fill="none" stroke="#b56c40" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M58 30 Q62 40 58 46" fill="none" stroke="#b56c40" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M68 31 Q72 40 68 46" fill="none" stroke="#b56c40" stroke-width="2.5" stroke-linecap="round"/>
+                        <!-- Cat Head & Ears -->
+                        <circle cx="105" cy="40" r="16" fill="#d99164"/>
+                        <polygon points="92,29 95,15 104,26" fill="#d99164"/>

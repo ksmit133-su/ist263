@@ -5,6 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kay Smith / Architecture Portfolio</title>
     <link rel="stylesheet" href="style.css">
+
+    <script>
+        /* 1. Hides the popup and ALL notebooks */
+        function NotebooksOff() {
+            document.getElementById('notebook-modal').style.display = 'none';
+            document.getElementById('book2022').style.display = 'none';
+            document.getElementById('book2023').style.display = 'none';
+            document.getElementById('book2024').style.display = 'none';
+            document.getElementById('book2025').style.display = 'none';
+            document.getElementById('book2026').style.display = 'none';
+            document.getElementById('bookother').style.display = 'none';
+        }
+
+        /* 2. Functions to open each specific notebook  */
+        function Book2022On() {
+            document.getElementById('notebook-modal').style.display = 'flex';
+            document.getElementById('book2022').style.display = 'block';
+        }
+
+        function Book2023On() {
+            document.getElementById('notebook-modal').style.display = 'flex';
+            document.getElementById('book2023').style.display = 'block';
+        }
+
+        function Book2024On() {
+            document.getElementById('notebook-modal').style.display = 'flex';
+            document.getElementById('book2024').style.display = 'block';
+        }
+
+        function Book2025On() {
+            document.getElementById('notebook-modal').style.display = 'flex';
+            document.getElementById('book2025').style.display = 'block';
+        }
+
+        function Book2026On() {
+            document.getElementById('notebook-modal').style.display = 'flex';
+            document.getElementById('book2026').style.display = 'block';
+        }
+
+        function BookOtherOn() {
+            document.getElementById('notebook-modal').style.display = 'flex';
+            document.getElementById('bookother').style.display = 'block';
+        }
+
+        /* 3. Simple page-flip functions for flipping pages inside the 2022 book */
+        function Show2022Page1() {
+            document.getElementById('page2022-1').style.display = 'flex';
+            document.getElementById('page2022-2').style.display = 'none';
+        }
+
+        function Show2022Page2() {
+            document.getElementById('page2022-1').style.display = 'none';
+            document.getElementById('page2022-2').style.display = 'flex';
+        }
+    </script>
 </head>
 <body>
 
@@ -22,27 +77,28 @@
         <!-- Portfolio Header -->
         <header class="main-header">
             <h1>My Architecture Journals.</h1>
-            <p class="subtitle">Five years. A new Jounral. Every year.<br>
+            <p class="subtitle">Five years. A new Journal. Every year.</p>
         </header>
 
-        <!-- Dynamic Studio Room & Shelves Container -->
+        <!-- Studio Room & Shelves Container -->
         <div class="room-canvas">
             
             <!-- Hanging Plant Decor on the left side of the wall -->
+              <img src="../images/index page images/drawn-hanging-plants.png" alt="hanging plnt" class="decor-hanging">
             <div class="hanging-plant-container">
                 <div class="hanging-string"></div>
                 <div class="hanging-pot">🌱</div>
                 <div class="vines">
-                    <span>🍃</span><span>🍃</span><span>🍃</span><span>🍃</span><span>🍃</span>
+                   
                 </div>
             </div>
 
-            <!-- SHELF LEVEL 1 (Top Shelf) -->
+            <!-- Top Shelf -->
             <div class="shelf-container level-top">
                 <div class="shelf-items">
                     
                     <!-- 2022-23 Notebook -->
-                    <div class="book-spine height-tall orange-spine">
+                    <div class="book-spine height-tall orange-spine" onclick="NotebooksOff(); Book2022On();">
                         <div class="spine-content">
                             <span class="year">2022</span>
                             <div class="diamonds">♦<br>♦</div>
@@ -50,7 +106,7 @@
                     </div>
 
                     <!-- 2023-24 Notebook -->
-                    <div class="book-spine height-max green-spine">
+                    <div class="book-spine height-max green-spine" onclick="NotebooksOff(); Book2023On();">
                         <div class="spine-content">
                             <span class="year">2023</span>
                             <div class="semicircles">D<br>D<br>D</div>
@@ -58,7 +114,7 @@
                     </div>
 
                     <!-- 2024-25 Notebook -->
-                    <div class="book-spine height-medium yellow-spine">
+                    <div class="book-spine height-medium yellow-spine" onclick="NotebooksOff(); Book2024On();">
                         <div class="spine-content">
                             <span class="year">2024</span>
                             <div class="grid-texture"></div>
@@ -69,9 +125,10 @@
                     <div class="mini-cup">☕</div>
 
                     <!-- Potted plant on the right side of the top shelf -->
-                    <div class="potted-plant">🪴</div>
+                    <img src="../images/index page images/potted-plant01.png" alt="Potted plant" class="decor-plant">
 
                     <!-- Sleeping Cat element with custom Zzz text markers -->
+                     <img src="../images/index page images/Sleeping-Cat.png" alt="Sleeping cat" class="decor-cat">
                     <div class="sleeping-cat">
                         🐱<span class="zzz z1">z</span><span class="zzz z2">z</span>
                     </div>
@@ -84,18 +141,15 @@
                 </div>
             </div>
 
-            <!-- SHELF LEVEL 2 (Bottom Shelf) -->
+            <!-- Bottom Shelf -->
             <div class="shelf-container level-bottom">
                 <div class="shelf-items">
                     
                     <!-- Desk Lamp Object -->
-                    <div class="desk-lamp">💡</div>
-
-                    <!-- Pen/Pencil Cup Holder -->
-                    <div class="pencil-cup">✏️</div>
+                    <img src="../images/index page images/desk-lamp.png" alt="Desk lamp" class="decor-lamp">
 
                     <!-- 2025-26 Notebook -->
-                    <div class="book-spine height-max blue-spine">
+                    <div class="book-spine height-max blue-spine" onclick="NotebooksOff(); Book2025On();">
                         <div class="spine-content">
                             <span class="year">2025</span>
                             <span class="star-symbol">✦</span>
@@ -103,7 +157,7 @@
                     </div>
 
                     <!-- 2026-27 Notebook -->
-                    <div class="book-spine height-tall purple-spine">
+                    <div class="book-spine height-tall purple-spine" onclick="NotebooksOff(); Book2026On();">
                         <div class="spine-content">
                             <span class="year">2026</span>
                             <div class="circle-badge">◎</div>
@@ -111,7 +165,7 @@
                     </div>
 
                     <!-- 6th Notebook: The "Other" File Folder -->
-                    <div class="book-spine height-max other-spine">
+                    <div class="book-spine height-max other-spine" onclick="NotebooksOff(); BookOtherOn();">
                         <div class="spine-content">
                             <span class="label-text">OTHER</span>
                             <span class="wave-icon">〰</span>
@@ -137,54 +191,8 @@
         </div>
 
         <!-- Filter / Navigation Grid Component -->
-        <section class="quick-nav-section">
-            <div class="cards-grid">
-                
-                <div class="nav-card">
-                    <div class="card-header">
-                        <span class="dot dot-orange"></span>
-                        <h3>2022–2023</h3>
-                    </div>
-                    <p class="card-dates">AUG 2022 – MAY 2023</p>
-                </div>
-
-                <div class="nav-card">
-                    <div class="card-header">
-                        <span class="dot dot-green"></span>
-                        <h3>2023–2024</h3>
-                    </div>
-                    <p class="card-dates">AUG 2023 – MAY 2024</p>
-                </div>
-
-                <div class="nav-card">
-                    <div class="card-header">
-                        <span class="dot dot-yellow"></span>
-                        <h3>2024–2025</h3>
-                    </div>
-                    <p class="card-dates">AUG 2024 – MAY 2025</p>
-                </div>
-
-                <div class="nav-card">
-                    <div class="card-header">
-                        <span class="dot dot-blue"></span>
-                        <h3>2025–2026</h3>
-                    </div>
-                    <p class="card-dates">AUG 2025 – MAY 2026</p>
-                </div>
-
-                <div class="nav-card">
-                    <div class="card-header">
-                        <span class="dot dot-purple"></span>
-                        <h3>2026–2027</h3>
-                    </div>
-                    <p class="card-dates">AUG 2026 – MAY 2027</p>
-                </div>
-
-            </div>
-
-            <!-- Bottom Row Filter Box targeting the Extra Book -->
-            <div class="cards-row-bottom">
-                <div class="nav-card wide-card">
+        <div class="cards-row-bottom">
+                <div class="nav-card wide-card" onclick="NotebooksOff(); BookOtherOn();">
                     <div class="card-header justify-center">
                         <span class="dot dot-tan"></span>
                         <h3>Other</h3>
@@ -193,19 +201,135 @@
                 </div>
             </div>
 
-            <!-- Cursive instructional footnote from reference image -->
             <p class="action-footer-text">tap a notebook to open it · turn on the music for company</p>
-            </section>
-
-
-            <h2>About</h2><p>I’m Kay, a senior studying architecture at Syracuse University. 
-            I came to architecture through customizing and renovating homes, and I keep returning to community-driven design: shelter, domestic space and landscape. These notebooks are where the thinking happens.</p> · turn on the music for company</p>
         </section>
 
-        
-    <footer>To be continued…</footer>
+        <section class="about-section">
+            <h2>About</h2>
+            <p>I’m Kay, a senior studying architecture at Syracuse University. I came to architecture through customizing and renovating homes, and I keep returning to community-driven design: shelter, domestic space and landscape. These notebooks are where the thinking happens.</p>
+        </section>
+
+        <footer>To be continued…</footer>
 
     </main>
 
+    <!-- Open Notebook Popup Modal -->
+    <div id="notebook-modal" class="modal-overlay">
+        <div class="open-journal">
+            
+            <button class="close-btn" onclick="NotebooksOff()">✕ Close Journal</button>
+            
+            <!-- 2022 Notebook -->
+            <div id="book2022">
+                <div id="page2022-1" class="journal-spread">
+                    <div class="page left-page">
+                        <span class="page-tag">2022–2023 · PAGE 1 OF 2</span>
+                        <h2>Pavilion Study</h2>
+                        <p>First-year studio exploration focusing on timber joinery, light filtering, and natural site topography.</p>
+                    </div>
+                    <div class="page right-page">
+                        <img src="https://unsplash.com" alt="Pavilion Sketch">
+                        <p class="caption">Fig 1.1 - Timber Section & Elevation</p>
+                    </div>
+                </div>
+
+                <div id="page2022-2" class="journal-spread">
+                    <div class="page left-page">
+                        <span class="page-tag">2022–2023 · PAGE 2 OF 2</span>
+                        <h2>Urban Pocket Park</h2>
+                        <p>Redesigning an unused downtown alleyway into a quiet public reading garden with rainwater collection.</p>
+                    </div>
+                    <div class="page right-page">
+                        <img src="https://unsplash.com" alt="Pocket Park">
+                        <p class="caption">Fig 1.2 - Site Plan & Circulation</p>
+                    </div>
+                </div>
+
+                <div class="flip-controls">
+                    <button onclick="Show2022Page1()">← Page 1</button>
+                    <button onclick="Show2022Page2()">Page 2 →</button>
+                </div>
+            </div>
+
+            <!-- 2023 Notebook -->
+            <div id="book2023">
+                <div class="journal-spread">
+                    <div class="page left-page">
+                        <span class="page-tag">2023–2024 · STUDIO WORK</span>
+                        <h2>Community Library</h2>
+                        <p>A three-story cantilevered concrete and glass library designed around a central daylight atrium.</p>
+                    </div>
+                    <div class="page right-page">
+                        <img src="https://unsplash.com" alt="Community Library">
+                        <p class="caption">Fig 2.1 - Facade & Atrium Massing</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2024 Notebook -->
+            <div id="book2024">
+                <div class="journal-spread">
+                    <div class="page left-page">
+                        <span class="page-tag">2024–2025 · STUDIO WORK</span>
+                        <h2>Timber Housing Co-op</h2>
+                        <p>Modular mass-timber residential units with shared rooftop greenhouses and passive solar shading.</p>
+                    </div>
+                    <div class="page right-page">
+                        <img src="https://unsplash.com" alt="Timber Housing">
+                        <p class="caption">Fig 3.1 - Structural Axonometric</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2025 Notebook -->
+            <div id="book2025">
+                <div class="journal-spread">
+                    <div class="page left-page">
+                        <span class="page-tag">2025–2026 · STUDIO WORK</span>
+                        <h2>Waterfront Museum</h2>
+                        <p>Adaptive reuse of a historic industrial warehouse into a contemporary sculpture gallery.</p>
+                    </div>
+                    <div class="page right-page">
+                        <img src="https://unsplash.com" alt="Waterfront Museum">
+                        <p class="caption">Fig 4.1 - Interior Gallery Section</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2026 Notebook -->
+            <div id="book2026">
+                <div class="journal-spread">
+                    <div class="page left-page">
+                        <span class="page-tag">2026–2027 · THESIS</span>
+                        <h2>Thesis Proposal</h2>
+                        <p>Researching low-carbon rammed earth construction techniques for cold-climate urban infill.</p>
+                    </div>
+                    <div class="page right-page">
+                        <img src="https://unsplash.com" alt="Thesis Research">
+                        <p class="caption">Fig 5.1 - Material & Wall Detail</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Notebook -->
+            <div id="bookother">
+                <div class="journal-spread">
+                    <div class="page left-page">
+                        <span class="page-tag">OTHER · SKETCHBOOK</span>
+                        <h2>Travel & Field Sketches</h2>
+                        <p>Quick ink and watercolor studies drawn on location during summer architecture trips.</p>
+                    </div>
+                    <div class="page right-page">
+                        <img src="https://unsplash.com" alt="Travel Sketches">
+                        <p class="caption">Ink Sketchbook - Summer Studies</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+            </div>
 </body>
 </html>

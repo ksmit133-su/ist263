@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kay Smith — Five Years, Six Notebooks</title>
+<style>
+:root{--bg:#f5edd9;--ink:#25211c;--mute:#7d7568;--line:#ddd3c0;--card:#fbf7ee;--shadow:rgba(60,40,20,.22);--shelf:#2b2622;--cream:#fbf1dc;--grid:rgba(110,140,150,.2);--gridM:rgba(110,140,150,.34);--accent:#b4472a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171613;--ink:#ece6da;--mute:#a0978a;--line:#37332b;--card:#201e19;--shadow:rgba(0,0,0,.5);--shelf:#d8cfbf;--grid:rgba(255,255,255,.04);--gridM:rgba(255,255,255,.08);--accent:#e0896a}}
+:root[data-theme="dark"]{--bg:#171613;--ink:#ece6da;--mute:#a0978a;--line:#37332b;--card:#201e19;--shadow:rgba(0,0,0,.5);--shelf:#d8cfbf;--grid:rgba(255,255,255,.04);--gridM:rgba(255,255,255,.08);--accent:#e0896a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.7 Georgia,"Times New Roman",serif;min-height:100vh;
+background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px),linear-gradient(var(--gridM) 1px,transparent 1px),linear-gradient(90deg,var(--gridM) 1px,transparent 1px);background-size:24px 24px,24px 24px,120px 120px,120px 120px}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace}
+.top{display:flex;justify-content:space-between;align-items:center;padding:18px 28px;font:12px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+#mus{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);right:16px;z-index:60;display:flex;align-items:center;gap:8px;background:var(--card);color:var(--ink);border:1px solid var(--shelf);border-radius:99px;padding:7px 14px;font:12px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.08em;cursor:pointer}
+#mus.pulse{animation:pl 1.8s infinite}
+@keyframes pl{50%{box-shadow:0 0 0 7px rgba(180,71,42,.15)}}
+header{max-width:760px;margin:0 auto;padding:30px 24px 0;text-align:center}
+h1{font-size:clamp(38px,8vw,64px);line-height:1.05;margin:0 0 14px;font-weight:400;font-style:italic}
+header p{color:var(--mute);max-width:520px;margin:0 auto}
+.stage{max-width:900px;margin:18px auto 0;padding:0 12px}
+.room{display:block;width:100%;height:auto;overflow:visible}
+.bk{cursor:pointer;transition:transform .25s}
+.bk:hover,.bk:focus-visible{transform:translateY(-14px);outline:none}
+.yr{font:700 11px ui-monospace,Menlo,Consolas,monospace;text-anchor:middle}
+.zz{font:italic 700 15px Georgia,serif;fill:var(--mute)}
+.pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:900px;margin:4px auto 0;padding:0 16px}
+.pill{display:flex;flex-direction:column;align-items:center;gap:2px;padding:9px 14px;border:1px solid var(--shelf);border-radius:4px;background:var(--card);color:var(--ink);font:700 12px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.08em;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.pill:hover{transform:translateY(-3px);box-shadow:0 6px 10px var(--shadow)}
+.pill i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;background:var(--d)}
+.pill small{font-weight:400;font-size:9.5px;color:var(--mute);text-transform:uppercase;letter-spacing:.05em}
+.hint{text-align:center;color:var(--mute);margin:18px 0 0;font:20px "Bradley Hand","Segoe Print","Comic Sans MS",cursive}
+footer{text-align:center;color:var(--mute);padding:40px 24px 60px;font:12px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.1em;text-transform:uppercase}
+
+.top a{color:inherit;text-decoration:none}.top a:hover{color:var(--ink)}.top{padding-right:80px}
+#mus{width:40px;height:40px;padding:0;justify-content:center;gap:0;font-size:16px}#ml{display:none}
+.scene{position:relative;max-width:1100px;margin:0 auto;padding:0 12px}
+.ttl{position:absolute;top:1.5%;left:0;right:0;text-align:center;pointer-events:none;z-index:2}
+.ttl h1{font:700 clamp(18px,3.6vw,40px)/1.15 ui-monospace,Menlo,Consolas,monospace;font-style:normal;margin:0;letter-spacing:-.01em}
+.ttl p{margin:6px 0 0;font:clamp(8px,1.1vw,12px) ui-monospace,Menlo,Consolas,monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--ink)}
+.sm{font:700 7px ui-monospace,Menlo,Consolas,monospace;text-anchor:middle;letter-spacing:.1em}
+.pill{flex-direction:row;gap:0;padding:11px 16px;border-radius:2px;letter-spacing:.14em}.pill small{display:none}
+.pill i{border:2px solid var(--d)}.pill i.now{background:transparent}
+.about{max-width:620px;margin:40px auto 0;padding:0 24px;text-align:center}.about h2{font:400 12px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}.about p{margin:8px 0 0}
+/* open book */
+#ov{position:fixed;inset:0;z-index:50;background:rgba(30,26,20,.62);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:calc(env(safe-area-inset-top,0px) + 56px) 14px calc(env(safe-area-inset-bottom,0px) + 14px);overflow:auto}
+#ov[hidden]{display:none}
+.lab{color:#f3ead6;font:12px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.12em;text-transform:uppercase;text-align:center}
+.book{width:min(1000px,100%);background:#2b2622;padding:8px;border-radius:5px;box-shadow:0 20px 50px rgba(0,0,0,.45);position:relative}
+.pages{display:grid;grid-template-columns:1fr 1fr;background:#fffdf7;animation:fi .35s}
+@keyframes fi{from{opacity:0;transform:translateX(10px)}}
+.pg{position:relative;padding:34px 40px 40px;min-height:min(62vh,560px);display:flex;flex-direction:column;color:#25211c}
+.pg:first-child{background:linear-gradient(90deg,#fffdf7 88%,#e9e3d3)}
+.pg:last-child{background:linear-gradient(270deg,#fffdf7 88%,#e9e3d3)}
+.ph{display:flex;justify-content:space-between;font:11px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.14em;text-transform:uppercase;color:#6c655a;border-bottom:1px solid #25211c;padding-bottom:8px;width:100%}
+.ph b{color:#25211c}
+.pg h3{font:400 22px/1.25 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.08em;text-transform:uppercase;margin:16px 0 14px}
+.slot{flex:1;min-height:200px;border:1px dashed #b5ac98;display:flex;align-items:center;justify-content:center;text-align:center;font:12px ui-monospace,Menlo,Consolas,monospace;color:#9a917e;background:repeating-linear-gradient(135deg,transparent 0 11px,#eee8d8 11px 12px)}
+.slot img{max-width:100%;max-height:100%;object-fit:contain}
+.pn{position:absolute;bottom:16px;font:11px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.14em;color:#6c655a}
+.pg:first-child .pn{left:40px}.pg:last-child .pn{right:40px}
+.rib{position:absolute;left:calc(50% - 7px);bottom:-14px;width:14px;height:30px;background:#d9825f;clip-path:polygon(0 0,100% 0,100% 100%,50% 78%,0 100%)}
+.ctl{display:flex;align-items:center;gap:12px;width:min(1000px,100%);justify-content:space-between;margin-top:6px}
+.btn{background:#fffdf7;color:#25211c;border:1px solid #25211c;padding:10px 18px;font:15px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.08em;cursor:pointer}
+.btn.dk{background:#25211c;color:#fffdf7}
+.btn:disabled{opacity:.35;cursor:default}
+.cnt{color:#f3ead6;font:13px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.14em}
+@media(max-width:700px){.pages{grid-template-columns:1fr}.pg{min-height:0;padding:24px 22px 38px}.pg:first-child,.pg:last-child{background:#fffdf7}.pg:first-child .pn{left:22px}.pg:last-child .pn{right:22px}.btn{padding:9px 12px;font-size:13px}.slot{min-height:220px}.cnt{display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<button id="mus" class="pulse" aria-pressed="false" aria-label="Toggle background music"><span id="mi">♪</span><span id="ml">music</span></button>
+<div class="top"><span>Kay / Smith</span><span><a href="#shelf">Notebooks</a> &nbsp;/&nbsp; <a href="#about">About</a></span></div>
+
+<div class="scene" id="shelf">
+<div class="ttl"><h1>Five Years of Sketchbooks</h1><p>5 school years. 1 extra notebook. All of it.</p></div>
+<svg class="room" viewBox="0 0 1100 700" role="img" aria-label="Two wooden shelves with six notebooks, a calendar, plants, a sleeping cat and architecture studio tools">
+<defs>
+<path id="lf" d="M0 0C-9-8-9-22 0-30C9-22 9-8 0 0Z"/>
+<pattern id="gr" width="11" height="11" patternUnits="userSpaceOnUse"><path d="M11 0H0V11" fill="none" stroke="#b8862c" stroke-width="1"/></pattern>
+<linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dba46a"/><stop offset=".55" stop-color="#c58450"/><stop offset="1" stop-color="#a96a3b"/></linearGradient>
+<pattern id="grain" width="90" height="14" patternUnits="userSpaceOnUse"><path d="M0 4q22-3 45 0t45 0M0 10q25 3 50 0t40 0" stroke="#7a4524" stroke-opacity=".38" fill="none"/><ellipse cx="28" cy="7" rx="4" ry="1.8" fill="none" stroke="#7a4524" stroke-opacity=".3"/><ellipse cx="71" cy="6" rx="3" ry="1.4" fill="none" stroke="#7a4524" stroke-opacity=".28"/></pattern>
+</defs>
+
+<!-- hanging plant -->
+<g transform="translate(30 0)">
+<line x1="120" y1="0" x2="120" y2="135" stroke="var(--mute)" stroke-width="1.5"/><path d="M120 135L85 150M120 135L155 150" stroke="var(--mute)" fill="none"/><circle cx="120" cy="135" r="4" fill="var(--bg)" stroke="var(--shelf)" stroke-width="2"/>
+<g fill="none" stroke="#2f6e48" stroke-width="2"><path d="M92 172C84 240 100 330 90 450"/><path d="M120 178C128 270 114 380 124 560"/><path d="M148 172C156 240 144 320 152 420"/></g>
+<g fill="#3f8a5a"><use href="#lf" transform="translate(88 205) rotate(-70) scale(.9)"/><use href="#lf" transform="translate(96 250) rotate(70) scale(.9)"/><use href="#lf" transform="translate(95 300) rotate(-75) scale(.9)"/><use href="#lf" transform="translate(97 350) rotate(70) scale(.9)"/><use href="#lf" transform="translate(92 400) rotate(-70) scale(.9)"/><use href="#lf" transform="translate(90 445) rotate(75) scale(.9)"/><use href="#lf" transform="translate(150 200) rotate(70) scale(.9)"/><use href="#lf" transform="translate(148 245) rotate(-70) scale(.9)"/><use href="#lf" transform="translate(152 290) rotate(72) scale(.9)"/><use href="#lf" transform="translate(152 340) rotate(-70) scale(.9)"/><use href="#lf" transform="translate(152 390) rotate(72) scale(.9)"/></g>
+<g fill="#5fae6e"><use href="#lf" transform="translate(123 215) rotate(75) scale(.9)"/><use href="#lf" transform="translate(118 260) rotate(-72) scale(.9)"/><use href="#lf" transform="translate(121 310) rotate(70) scale(.9)"/><use href="#lf" transform="translate(120 360) rotate(-75) scale(.9)"/><use href="#lf" transform="translate(122 410) rotate(70) scale(.9)"/><use href="#lf" transform="translate(123 460) rotate(-70) scale(.9)"/><use href="#lf" transform="translate(124 510) rotate(72) scale(.9)"/><use href="#lf" transform="translate(124 555) rotate(-70) scale(.9)"/></g>
+<path d="M85 150a35 30 0 0 0 70 0z" fill="var(--cream)" stroke="var(--shelf)" stroke-width="1.5"/>
+<g fill="#3f8a5a"><use href="#lf" transform="translate(95 150) rotate(-80) scale(1.4)"/><use href="#lf" transform="translate(110 148) rotate(-30) scale(1.5)"/><use href="#lf" transform="translate(130 148) rotate(30) scale(1.5)"/><use href="#lf" transform="translate(145 150) rotate(80) scale(1.4)"/></g>
+</g>
+
+<g id="shelves"></g>
+
+<!-- calendar -->
+<g transform="rotate(-5 300 330)"><rect x="262" y="266" width="88" height="64" rx="3" fill="var(--cream)" stroke="var(--shelf)" stroke-width="1.8"/><rect x="262" y="266" width="88" height="15" rx="3" fill="#e0674a"/><text x="306" y="277" id="cm" class="sm" fill="#fff8ec">NOVEMBER</text>
+<g fill="none" stroke="var(--shelf)" stroke-width="1.5"><path d="M274 262v8M284 262v8M294 262v8M304 262v8M314 262v8M324 262v8M334 262v8"/></g>
+<g fill="var(--mute)"><circle cx="276" cy="292" r="1.8"/><circle cx="288" cy="292" r="1.8"/><circle cx="300" cy="292" r="1.8"/><circle cx="312" cy="292" r="1.8"/><circle cx="324" cy="292" r="1.8"/><circle cx="336" cy="292" r="1.8"/><circle cx="276" cy="304" r="1.8"/><circle cx="288" cy="304" r="1.8"/><circle cx="300" cy="304" r="1.8"/><circle cx="324" cy="304" r="1.8"/><circle cx="336" cy="304" r="1.8"/><circle cx="276" cy="316" r="1.8"/><circle cx="288" cy="316" r="1.8"/><circle cx="300" cy="316" r="1.8"/></g><rect x="308" y="300" width="8" height="8" rx="1" fill="#5fae6e"/></g>
+
+<!-- top-shelf notebooks -->
+<g class="bk" data-i="0" role="button" tabindex="0" aria-label="Open 2022–2023 notebook"><title>2022–2023 · Aug 2022 – May 2023</title>
+<rect x="380" y="134" width="66" height="196" rx="3" fill="#e0674a"/><rect x="380" y="134" width="66" height="8" fill="#b94d34"/><rect x="380" y="322" width="66" height="8" fill="#b94d34"/>
+<text x="413" y="168" class="yr" fill="#fff8ec">2022–23</text><path d="M413 192l11 19-11 19-11-19zM413 240l11 19-11 19-11-19z" fill="#fbf1dc"/></g>
+<g class="bk" data-i="1" role="button" tabindex="0" aria-label="Open 2023–2024 notebook"><title>2023–2024 · Aug 2023 – May 2024</title>
+<rect x="452" y="154" width="60" height="176" rx="3" fill="#5f9b7a"/><rect x="452" y="154" width="60" height="8" fill="#477c5f"/><rect x="452" y="322" width="60" height="8" fill="#477c5f"/>
+<text x="482" y="184" class="yr" fill="#fff8ec">2023–24</text><path d="M466 204a16 16 0 0 0 32 0zM466 226a16 16 0 0 0 32 0zM466 248a16 16 0 0 0 32 0z" fill="#fbf1dc"/><circle cx="482" cy="296" r="10" fill="#2f5a46"/></g>
+<g class="bk" data-i="2" role="button" tabindex="0" aria-label="Open 2024–2025 notebook"><title>2024–2025 · Aug 2024 – May 2025</title>
+<rect x="518" y="140" width="70" height="190" rx="3" fill="#e8b04a"/><rect x="518" y="140" width="70" height="8" fill="#c48d2c"/><rect x="518" y="322" width="70" height="8" fill="#c48d2c"/>
+<text x="553" y="170" class="yr" fill="#3a2a10">2024–25</text><rect x="526" y="184" width="54" height="96" fill="url(#gr)" stroke="#b8862c"/><circle cx="553" cy="302" r="9" fill="#fbf1dc"/></g>
+
+<!-- top plant -->
+<path d="M626 292h48l-6 38h-36z" fill="var(--cream)" stroke="var(--shelf)" stroke-width="1.5"/>
+<g fill="#3f8a5a"><use href="#lf" transform="translate(650 294) rotate(-60) scale(2)"/><use href="#lf" transform="translate(650 294) rotate(5) scale(2.3)"/><use href="#lf" transform="translate(650 294) rotate(55) scale(2)"/></g><g fill="#5fae6e"><use href="#lf" transform="translate(650 294) rotate(-30) scale(2.1)"/><use href="#lf" transform="translate(650 294) rotate(30) scale(2.1)"/></g>
+
+<!-- cat -->
+<path d="M744 322C720 336 730 382 718 410" stroke="#d98a5a" stroke-width="11" stroke-linecap="round" fill="none"/>
+<ellipse cx="808" cy="308" rx="66" ry="22" fill="#e39a66"/><path d="M756 316a54 14 0 0 0 104 0z" fill="#fbf1dc"/><g stroke="#b86d40" stroke-width="3" stroke-linecap="round"><path d="M782 288v12M798 286v14M814 286v14M830 288v12"/></g>
+<circle cx="872" cy="304" r="23" fill="#e39a66"/><path d="M852 290l-5-19 17 10zM892 290l5-19-17 10z" fill="#e39a66"/><path d="M854 292l-3-10 8 5zM890 292l3-10-8 5z" fill="#f4b8a0"/>
+<path d="M862 303q5 5 10 0M876 303q5 5 10 0" stroke="#2b2622" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="874" cy="312" r="2" fill="#c76a6a"/><text x="906" y="272" class="zz">z</text><text x="918" y="256" class="zz" font-size="11">z</text>
+
+<!-- bottom shelf: lamp, cup, stack + ruler, set square, model, plant -->
+<ellipse cx="278" cy="538" rx="26" ry="6" fill="var(--shelf)"/><path d="M278 536L256 470L322 440" stroke="var(--shelf)" stroke-width="5" fill="none" stroke-linejoin="round"/><path d="M310 430L350 412L366 440L326 456z" fill="#e0674a"/><circle cx="360" cy="448" r="5" fill="#ffe08a"/>
+<rect x="372" y="504" width="26" height="36" rx="3" fill="var(--shelf)"/><path d="M379 504L377 476M386 504L387 472M393 504L398 478" stroke="#e8b04a" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+<rect x="400" y="528" width="72" height="12" rx="2" fill="#5f9b7a"/><rect x="406" y="516" width="62" height="12" rx="2" fill="#e0674a"/><rect x="403" y="504" width="68" height="12" rx="2" fill="#4a6fa5"/>
+<rect x="402" y="496" width="70" height="8" rx="1" fill="#f0dca0" stroke="var(--shelf)"/><path d="M412 496v4M422 496v5M432 496v4M442 496v5M452 496v4M462 496v5" stroke="var(--shelf)"/>
+<path d="M480 540h54L480 484z" fill="#4a6fa5" fill-opacity=".3" stroke="#4a6fa5" stroke-width="2" stroke-linejoin="round"/><path d="M488 532h26L488 502z" fill="none" stroke="#4a6fa5" stroke-opacity=".6"/>
+<rect x="540" y="530" width="58" height="10" rx="1" fill="#d9b98a" stroke="var(--shelf)" stroke-width="1.2"/><rect x="548" y="504" width="32" height="26" fill="#fff8ea" stroke="var(--shelf)" stroke-width="1.2"/><path d="M544 506l20-18 20 18z" fill="#e0674a" stroke="var(--shelf)" stroke-width="1.2" stroke-linejoin="round"/><rect x="558" y="512" width="8" height="10" fill="#9ec3d6"/><circle cx="590" cy="522" r="5" fill="#5fae6e"/>
+<path d="M610 502h44l-6 38h-32z" fill="var(--cream)" stroke="var(--shelf)" stroke-width="1.5"/>
+<g fill="#3f8a5a"><use href="#lf" transform="translate(632 504) rotate(-55) scale(1.7)"/><use href="#lf" transform="translate(632 504) rotate(55) scale(1.7)"/></g><g fill="#5fae6e"><use href="#lf" transform="translate(632 504) rotate(-20) scale(1.9)"/><use href="#lf" transform="translate(632 504) rotate(20) scale(1.9)"/></g>
+
+<!-- bottom-shelf notebooks -->
+<g class="bk" data-i="3" role="button" tabindex="0" aria-label="Open 2025–2026 notebook"><title>2025–2026 · Aug 2025 – May 2026</title>
+<rect x="672" y="370" width="54" height="170" rx="3" fill="#4a6fa5"/><rect x="672" y="370" width="54" height="8" fill="#365483"/><rect x="672" y="532" width="54" height="8" fill="#365483"/>
+<path d="M672 378h16C682 420 708 470 694 532h-22z" fill="#fbf1dc" opacity=".92"/><path d="M708 400l3 9 9 3-9 3-3 9-3-9-9-3 9-3z" fill="#fbf1dc"/><text transform="translate(712 500) rotate(-90)" class="yr" fill="#fff8ec">2025–26</text></g>
+<g class="bk" data-i="4" role="button" tabindex="0" aria-label="Open 2026–2027 notebook"><title>2026–2027 · Aug 2026 – May 2027 · in progress</title>
+<rect x="730" y="392" width="50" height="148" rx="3" fill="#8a5a83"/><rect x="730" y="392" width="50" height="8" fill="#6c4166"/><rect x="730" y="532" width="50" height="8" fill="#6c4166"/>
+<circle cx="755" cy="428" r="13" fill="none" stroke="#fbf1dc" stroke-width="3"/><circle cx="755" cy="428" r="5" fill="#fbf1dc"/><text transform="translate(762 505) rotate(-90)" class="yr" fill="#fff8ec">2026–27</text></g>
+<g class="bk" data-i="5" role="button" tabindex="0" aria-label="Open Miscellaneous notebook"><title>Miscellaneous · side projects &amp; extras</title>
+<rect x="784" y="380" width="58" height="160" rx="3" fill="#c9a574"/><rect x="784" y="380" width="58" height="8" fill="#a9824f"/><rect x="784" y="532" width="58" height="8" fill="#a9824f"/>
+<rect x="791" y="404" width="44" height="30" rx="2" fill="#fbf1dc"/><text x="813" y="424" class="yr" fill="#2a251f">MISC</text><path d="M792 470q7-10 14 0t14 0t14 0" stroke="#7a5a30" stroke-width="2.5" fill="none"/></g>
+
+<!-- mug -->
+<path d="M861 508q-5-7 0-14t0-12M873 508q-5-7 0-14t0-12" stroke="var(--mute)" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="852" y="514" width="30" height="26" rx="6" fill="#fbf1dc" stroke="var(--shelf)" stroke-width="1.5"/><rect x="852" y="523" width="30" height="6" fill="#e0674a"/><path d="M882 522q12 0 12 9t-12 9" stroke="var(--shelf)" stroke-width="3" fill="none"/>
+</svg>
+</div>
+
+<div class="pills" id="pills"></div>
+<p class="hint">tap a notebook to open it · the circle up top plays music</p>
+<section class="about" id="about"><h2>About</h2><p>I’m Kay, a senior studying architecture at Syracuse University. I came to architecture through customizing and renovating homes, and I keep returning to community-driven design: shelter, domestic space and landscape. These notebooks are where the thinking happens.</p></section>
+<footer>To be continued…</footer>
+
+<div id="ov" hidden role="dialog" aria-modal="true" aria-label="Notebook">
+<div class="lab" id="lab"></div>
+<div class="book"><div class="pages" id="pages"></div><i class="rib"></i></div>
+<div class="ctl"><button class="btn" id="bk">← Back to shelf</button><span class="cnt" id="cnt"></span><span><button class="btn" id="pv">← Previous</button> <button class="btn dk" id="nx">Next →</button></span></div>
+</div>
+
+<script>
+// ---- Notebook contents. Add an image to any page with img:"data:image/..." (or tell Claude and it will embed your files).
+var P=function(t,d,img){return {t:t,d:d,img:img}};
+var NB=[
+{n:'2022–2023',r:'Aug 2022 – May 2023',c:'#e0674a',p:[P('Project 01','Fall 2022'),P('Project 02','Fall 2022'),P('Project 03','Spring 2023'),P('Project 04','Spring 2023')]},
+{n:'2023–2024',r:'Aug 2023 – May 2024',c:'#5f9b7a',p:[P('Project 01','Fall 2023'),P('Project 02','Fall 2023'),P('Project 03','Spring 2024'),P('Project 04','Spring 2024')]},
+{n:'2024–2025',r:'Aug 2024 – May 2025',c:'#e8b04a',p:[P('Project 01','Fall 2024'),P('Project 02','Fall 2024'),P('Project 03','Spring 2025'),P('Project 04','Spring 2025')]},
+{n:'2025–2026',r:'Aug 2025 – May 2026',c:'#4a6fa5',p:[P('Zaatari Refugee Camp Playground','2025–26'),P('Project 02','Fall 2025'),P('Project 03','Spring 2026'),P('Project 04','Spring 2026')]},
+{n:'2026–2027',r:'Aug 2026 – May 2027',c:'#8a5a83',p:[P('The Porch as Threshold','Fall 2026'),P('A Greenhouse at the Heart of the House','2026'),P('Project 03','Spring 2027'),P('Project 04','Spring 2027')]},
+{n:'Miscellaneous',r:'Side projects & extras',c:'#c9a574',p:[P('Designing a Park Together','Ongoing'),P('Club Park Build','Ongoing'),P('Side project','—'),P('Side project','—')]}
+];
+// ---- shelves
+(function(){var h='';function sh(x,y,w,b){return '<rect x="'+x+'" y="'+(y+4)+'" width="'+w+'" height="14" rx="3" fill="#000" opacity=".12"/><rect x="'+x+'" y="'+y+'" width="'+w+'" height="14" rx="3" fill="url(#wood)"/><rect x="'+x+'" y="'+y+'" width="'+w+'" height="14" rx="3" fill="url(#grain)"/><rect x="'+(x+3)+'" y="'+(y+1)+'" width="'+(w-6)+'" height="2" rx="1" fill="#fff" opacity=".28"/>'+b.map(function(bx){return '<rect x="'+bx+'" y="'+(y+14)+'" width="22" height="26" rx="8" fill="#a96a3b"/>'}).join('')}
+h+=sh(230,330,700,[272,880])+sh(230,540,670,[272,850]);document.getElementById('shelves').innerHTML=h})();
+document.getElementById('cm').textContent=new Date().toLocaleString('en',{month:'long'}).toUpperCase();
+// ---- pills
+var pills=document.getElementById('pills');
+NB.forEach(function(b,i){var e=document.createElement('button');e.className='pill';e.style.setProperty('--d',b.c);e.innerHTML='<span><i'+(i==4?' class="now"':'')+'></i>'+b.n+'</span><small>'+b.r+'</small>';e.onclick=function(){openNB(i,e)};pills.appendChild(e)});
+// ---- book
+var ov=document.getElementById('ov'),pg=document.getElementById('pages'),cur=0,sp=0,opener=null;
+function z(n){return (n<10?'0':'')+n}
+function page(p,n){if(!p)return '<div class="pg"></div>';return '<div class="pg"><div class="ph"><b>Page '+z(n)+'</b><span>'+p.d+'</span></div><h3>'+p.t+'</h3><div class="slot">'+(p.img?'<img src="'+p.img+'" alt="'+p.t+'">':'Drop image here')+'</div><span class="pn">'+z(n)+'</span></div>'}
+function render(){var b=NB[cur],a=sp*2;pg.style.animation='none';pg.offsetWidth;pg.style.animation='';pg.innerHTML=page(b.p[a],a+1)+page(b.p[a+1],a+2);
+document.getElementById('lab').textContent=(cur<5?'Notebook No. '+(cur+1)+' · ':'')+b.n+' · '+b.r;
+document.getElementById('cnt').textContent=z(a+1)+'–'+z(a+2)+' / '+z(b.p.length);
+document.getElementById('pv').disabled=sp==0;document.getElementById('nx').disabled=a+2>=b.p.length}
+function openNB(i,el){cur=i;sp=0;opener=el||null;render();ov.hidden=false;document.body.style.overflow='hidden';document.getElementById('bk').focus();if(!mutedByUser)music(true)}
+function closeNB(){ov.hidden=true;document.body.style.overflow='';if(opener)opener.focus()}
+function go(d){var n=sp+d;if(n<0||n*2>=NB[cur].p.length)return;sp=n;render()}
+document.getElementById('bk').onclick=closeNB;document.getElementById('pv').onclick=function(){go(-1)};document.getElementById('nx').onclick=function(){go(1)};
+ov.addEventListener('click',function(e){if(e.target===ov)closeNB()});
+document.addEventListener('keydown',function(e){if(ov.hidden)return;if(e.key==='Escape')closeNB();if(e.key==='ArrowRight')go(1);if(e.key==='ArrowLeft')go(-1)});
+document.querySelectorAll('.bk').forEach(function(g){g.addEventListener('click',function(){openNB(+g.dataset.i,g)});g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openNB(+g.dataset.i,g)}})});
+// ---- music: soft generated ambience (no audio files). Browsers only allow sound after a click or tap.
+var ac,master,tick=0,playing=false,mutedByUser=false,btn=document.getElementById('mus');
+var CH=[[261.6,329.6,392,493.9],[220,261.6,329.6,392],[174.6,220,261.6,329.6],[196,246.9,293.7,392]],PE=[523.3,587.3,659.3,784,880];
+function tone(f,t,d,ty,v,a){var o=ac.createOscillator(),g=ac.createGain();o.type=ty;o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+a);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(master);o.start(t);o.stop(t+d+.1)}
+function step(){if(!playing)return;var t=ac.currentTime;if(tick%4==0)CH[(tick/4)%4].forEach(function(f){tone(f,t,7,'triangle',.05,2.5)});if(Math.random()<.75)tone(PE[Math.floor(Math.random()*5)],t+Math.random()*.3,2.6,'sine',.08,.01);tick++}
+function music(on){try{if(on){if(!ac){var C=window.AudioContext||window.webkitAudioContext;ac=new C();master=ac.createGain();master.gain.value=0;var lp=ac.createBiquadFilter();lp.type='lowpass';lp.frequency.value=1400;var dl=ac.createDelay();dl.delayTime.value=.42;var fb=ac.createGain();fb.gain.value=.38;dl.connect(fb);fb.connect(dl);master.connect(lp);lp.connect(ac.destination);lp.connect(dl);dl.connect(ac.destination);setInterval(step,1500)}
+ac.resume();master.gain.setTargetAtTime(.6,ac.currentTime,1.2);playing=true}else if(ac){master.gain.setTargetAtTime(0,ac.currentTime,.4);playing=false}}catch(e){playing=false}
+btn.setAttribute('aria-pressed',playing);btn.classList.toggle('pulse',!playing&&!ac);document.getElementById('mi').textContent=playing?'❚❚':'♪';document.getElementById('ml').textContent=playing?'music on':'music'}
+btn.onclick=function(){mutedByUser=playing;music(!playing)};
+</script>
+</body>
+</html>
