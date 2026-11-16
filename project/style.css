@@ -25,6 +25,10 @@ body {
     letter-spacing: 2px;
     font-weight: bold;
 }
+.navbar a {
+    color: var(--ink);
+    text-decoration: none;
+}
 
 .music-btn {
     text-decoration: none;
